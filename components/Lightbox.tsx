@@ -23,9 +23,9 @@ export default function Lightbox({ photos }: { photos: Photo[] }) {
 
   return (
     <>
-      <ul className="flex snap-x gap-4 overflow-x-auto pb-2">
+      <ul className="flex snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3">
         {photos.map((photo, i) => (
-          <li key={photo.src + photo.alt} className="w-[min(78vw,420px)] shrink-0 snap-start">
+          <li key={photo.src + photo.alt} className="w-[min(78vw,420px)] shrink-0 snap-start md:w-auto">
             <button type="button" className="photo-frame block w-full text-left" onClick={() => setIndex(i)}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={photo.src} alt={photo.alt} width={640} height={420} className="aspect-[4/3]" />
@@ -40,6 +40,9 @@ export default function Lightbox({ photos }: { photos: Photo[] }) {
           aria-modal="true"
           aria-label={current.alt}
         >
+          <button type="button" className="absolute left-4 top-4 min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length))}>
+            Vorige
+          </button>
           <button
             ref={closeRef}
             type="button"
@@ -47,6 +50,9 @@ export default function Lightbox({ photos }: { photos: Photo[] }) {
             onClick={() => setIndex(null)}
           >
             Sluiten
+          </button>
+          <button type="button" className="absolute bottom-4 right-4 min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex((i) => (i === null ? i : (i + 1) % photos.length))}>
+            Volgende
           </button>
           <figure className="photo-frame max-h-[82vh] w-full max-w-[900px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}

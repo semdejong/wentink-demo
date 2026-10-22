@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import EndCta from "@/components/EndCta";
 import Lightbox from "@/components/Lightbox";
 import PageHero from "@/components/PageHero";
+import QuoteBand from "@/components/QuoteBand";
+import SiblingNav from "@/components/SiblingNav";
 import { albums, shots } from "@/lib/photos";
 import { site } from "@/lib/site";
 
@@ -18,6 +20,12 @@ const redenen = [
   "Wanneer de inrichting nog volgens de smaak van de vorige bewoner is",
 ];
 
+const pijlers = [
+  { title: "Behouden", text: "Een slecht gazon, een verzakte oprit of verwilderde beplanting: we houden de goede elementen en verbeteren waar nodig. Met een kleine ingreep kan de tuin al een metamorfose ondergaan." },
+  { title: "Hergebruiken", text: "Tuinrenovatie is voordeliger dan volledig vernieuwen. Bestrating, accessoires en beplanting gaan we waar mogelijk hergebruiken. Die hoeven niet nieuw gekocht te worden, en de tuin heeft meteen weer een volwassen uitstraling." },
+  { title: "Vooraf inzicht", text: "U krijgt vooraf duidelijk inzage in hoe de tuin eruit gaat zien en welk budget daarbij hoort. Desgewenst maken we een tuinschets of ontwerp, en we bespreken het onderhoud daarna." },
+];
+
 export default function TuinrenovatiePage() {
   const album = albums.find((item) => item.id === "renovatie")!;
   return (
@@ -25,25 +33,38 @@ export default function TuinrenovatiePage() {
       <PageHero
         kicker="Renovatie"
         title="De basis blijft, de tuin wordt weer van u"
-        lede="Een slecht gazon, een verzakte oprit of verwilderde beplanting? We behouden de goede elementen en verbeteren waar nodig. Met een kleine ingreep kan uw tuin al een hele metamorfose ondergaan."
+        lede="Groeit het onkruid harder dan de bloemen, of nemen de bomen het licht op uw terras weg? Denk dan eens aan een tuinrenovatie."
         photo={shots.renovatieHeader}
       />
-      <div data-section="uitleg" className="mx-auto max-w-3xl space-y-4 px-5 pb-6 sm:px-6">
+      <section data-section="pijlers" className="mx-auto grid max-w-6xl gap-4 px-5 py-8 lg:grid-cols-3 sm:px-6">
+        {pijlers.map((item) => (
+          <article key={item.title} className="rounded-[1.4rem] border border-line bg-paper p-5">
+            <h2 className="font-serif text-3xl">{item.title}</h2>
+            <p className="mt-2 text-base">{item.text}</p>
+          </article>
+        ))}
+      </section>
+      <section data-section="redenen" className="mx-auto max-w-3xl px-5 py-4 sm:px-6">
         <h2 className="font-serif text-3xl">Denk aan tuinrenovatie</h2>
-        <ul className="list-disc space-y-1 pl-5">
+        <ul className="mt-4 space-y-2">
           {redenen.map((reden) => (
-            <li key={reden}>{reden}</li>
+            <li key={reden} className="flex gap-3">
+              <span aria-hidden className="mt-2 h-2.5 w-2.5 shrink-0 bg-wentink" />
+              <span>{reden}</span>
+            </li>
           ))}
         </ul>
-        <p>Tuinrenovatie is voordeliger dan volledig vernieuwen. Daar waar mogelijk gaan we de bestrating, accessoires en beplanting hergebruiken. Die elementen hoeven daarom niet aangekocht te worden. Het geeft uw tuin bovendien gelijk weer een volwassen uitstraling.</p>
-        <p>Vertrouw op ons advies over het hergebruik van beplanting, sierbestrating, tuinaccessoires, waterpartijen en houtdelen als schutting en pergola’s.</p>
-        <p>U krijgt vooraf duidelijk inzage in hoe de gerenoveerde tuin eruit gaat zien en welk budget daarvoor nodig is. Desgewenst maken we een tuinschets of ontwerp. We bespreken daarnaast ook het opvolgend tuinonderhoud, zodat u lang kunt blijven genieten.</p>
-        <p>Neem gerust contact op voor een vrijblijvende afspraak in {site.area}.</p>
-      </div>
-      <section data-section="voorbeelden" className="mx-auto max-w-6xl px-5 py-8 sm:px-6">
+        <p className="mt-4">Vertrouw op ons advies over het hergebruik van beplanting, sierbestrating, tuinaccessoires, waterpartijen en houtdelen als schutting en pergola’s. Neem gerust contact op voor een vrijblijvende afspraak in {site.area}.</p>
+      </section>
+      <QuoteBand
+        name="Paul Roescher"
+        quote="Ook de bestrating is door de inzet van Wentink weer helemaal puik!"
+      />
+      <section data-section="voorbeelden" className="mx-auto max-w-6xl px-5 py-10 sm:px-6">
         <h2 className="mb-4 font-serif text-3xl">Renovatie in beeld</h2>
         <Lightbox photos={album.photos} />
       </section>
+      <SiblingNav current="/diensten/tuinrenovatie" />
       <EndCta />
     </>
   );

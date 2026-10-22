@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AfspraakForm from "@/components/AfspraakForm";
 import { routes, site } from "@/lib/site";
 
@@ -26,19 +27,27 @@ export default function ContactPage() {
           ))}
         </ul>
         <p className="mt-3">{site.saturday}</p>
-        <p className="mt-4">{site.place}.</p>
-        <div className="mt-6 grid gap-3">
-          {routes.map((route) => (
-            <article key={route.from}>
-              <h3 className="font-serif text-2xl">{route.from}</h3>
-              <p className="text-base">{route.text}</p>
-            </article>
-          ))}
-        </div>
+        <p className="mt-4">{site.place}. Een aanhanger stellen wij vrijblijvend beschikbaar als u die zelf niet heeft.</p>
       </section>
       <section data-section="formulier" className="rounded-[1.6rem] border border-line bg-paper p-5 sm:p-6">
         <h2 className="mb-4 font-serif text-3xl">Afspraak aan huis</h2>
+        <p className="mb-4 text-base">
+          Liever alle details invullen? Gebruik het formulier voor een{" "}
+          <Link href="/afspraak" data-cta="offerte" className="font-bold underline underline-offset-4">vrijblijvende afspraak aan huis</Link>.
+        </p>
         <AfspraakForm compact />
+      </section>
+      <section data-section="route" className="lg:col-span-2">
+        <h2 className="font-serif text-4xl">Drie wegen naar het plantencentrum</h2>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {routes.map((route, index) => (
+            <article key={route.from} className="rounded-[1.4rem] border border-line bg-paper p-5">
+              <p className="text-sm font-bold tracking-[0.16em] text-wentink">{String(index + 1).padStart(2, "0")}</p>
+              <h3 className="mt-2 font-serif text-2xl">{route.from}</h3>
+              <p className="mt-2 text-base">{route.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
     </div>
   );

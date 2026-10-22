@@ -26,6 +26,20 @@ export default function OverOnsPage() {
           <p className="mt-3">Het bedrijf en het plantencentrum liggen {site.place}, met aanliggend 2 hectare kwekerij.</p>
         </div>
       </section>
+      <section data-section="twee-werelden" className="mx-auto grid max-w-6xl gap-4 px-5 py-6 sm:px-6 md:grid-cols-2">
+        <article className="rounded-[1.6rem] bg-dennen p-6 text-linen">
+          <p className="plant-tag">Hovenier</p>
+          <h2 className="mt-4 font-serif text-3xl">Laat uw tuin doen</h2>
+          <p className="mt-3 text-linen/85">Onderhoud, aanleg, renovatie en een handgetekend ontwerp. Wij komen bij u langs, nemen de maten op en lopen samen door de tuin.</p>
+          <Link href="/afspraak" data-cta="offerte" className="mt-5 inline-flex min-h-11 items-center rounded-full bg-linen px-5 font-bold text-dennen">Afspraak aan huis</Link>
+        </article>
+        <article className="rounded-[1.6rem] border border-line bg-paper p-6">
+          <p className="plant-tag">Kwekerij</p>
+          <h2 className="mt-4 font-serif text-3xl">Kom zelf kijken</h2>
+          <p className="mt-3 text-aarde">Het plantencentrum ligt {site.place}, met 2 hectare kwekerij en 60 soorten bomen uit voorraad. {site.saturday}</p>
+          <Link href="/plantencentrum" className="mt-5 inline-flex min-h-11 items-center rounded-full bg-dennen px-5 font-bold text-linen">Openingstijden en route</Link>
+        </article>
+      </section>
       <section data-section="tuinkeur" className="bg-paper py-12">
         <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 sm:grid-cols-[auto_1fr] sm:px-6">
           <img src="/tuinkeur-logo.jpg" alt="Logo Tuinkeur gecertificeerd" width={120} height={120} className="rounded-md bg-white p-2" />

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <article data-section="privacy" className="mx-auto max-w-3xl space-y-4 px-5 py-12 sm:px-6">
+      <p className="plant-tag">Privacy</p>
       <h1 className="font-serif text-4xl sm:text-5xl">Privacyverklaring</h1>
       <p>
         Hoveniersbedrijf Wentink, gevestigd in Markelo, {site.place}, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.

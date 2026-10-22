@@ -46,6 +46,9 @@ export const albums: { id: string; title: string; intro: string; photos: Photo[]
       { src: "/fotos/aanleg/aanleg-09.jpg", alt: "Natuurstenen watermuur met conifeer, split en lage beplanting" },
       { src: "/fotos/aanleg/aanleg-19.jpg", alt: "Houten overkapping met glazen puien, loungebank en grote tegels" },
       { src: "/fotos/aanleg/aanleg-voorbeeld-01.jpg", alt: "Aangelegd gazon met een ronde border en een solitaire boom bij de woning" },
+      { src: "/fotos/aanleg/aanleg-04.jpg", alt: "Gazon inzaaien bij een woning, met een strooiwagen op de bewerkte grond" },
+      { src: "/fotos/aanleg/aanleg-voorbeeld-03.jpg", alt: "Verhoogde border van donkere stenen met een watermuur, split en lage beplanting" },
+      { src: "/fotos/aanleg/aanleg-voorbeeld-07.jpg", alt: "Klinkerpad langs de woning, met een pergola, gazon en geschoren buxus" },
     ],
   },
   {
@@ -58,6 +61,7 @@ export const albums: { id: string; title: string; intro: string; photos: Photo[]
       { src: "/fotos/onderhoud/onderhoud-08.jpg", alt: "Boom met kluit planten in een bestaande tuin" },
       { src: "/fotos/onderhoud/onderhoud-01.jpg", alt: "Tuin met houten schutting, terras van klinkers en potten met violen" },
       { src: "/fotos/headers/onzediensten-onderhoud-header.jpg", alt: "Blad ruimen en de grond bijwerken tussen jonge bomen" },
+      { src: "/fotos/onderhoud/onderhoud-10.jpg", alt: "Grote boom met kluit planten bij een houten schuur" },
     ],
   },
   {
@@ -69,6 +73,8 @@ export const albums: { id: string; title: string; intro: string; photos: Photo[]
       { src: "/fotos/renovatie/renovatie-04.jpg", alt: "Grond frezen voor een nieuw gazon, tussen bestaande bomen en een haag" },
       { src: "/fotos/renovatie/renovatie-07.jpg", alt: "Houten schutting plaatsen langs een bestaand terras en gazon" },
       { src: "/fotos/headers/onzediensten-renovatie-header.jpg", alt: "Vernieuwde border met watermuur, stenen en vaste planten" },
+      { src: "/fotos/renovatie/renovatie-05.jpg", alt: "Grond frezen naast een bestaande haag" },
+      { src: "/fotos/renovatie/renovatie-voorbeeld-03.jpg", alt: "Tuin met grote tegels, een vijver en jonge beplanting in de borders" },
     ],
   },
   {
@@ -80,6 +86,7 @@ export const albums: { id: string; title: string; intro: string; photos: Photo[]
       { src: "/fotos/landschapstuinen/landschapstuinen-04.jpg", alt: "Grondwerk en pas geplante bomen bij een woning met rode pannen" },
       { src: "/fotos/landschapstuinen/landschapstuinen-03.jpg", alt: "Boom planten met minigraver en trekker bij een woning in het landschap" },
       { src: "/fotos/landschapstuinen/landschapstuinen-06.jpg", alt: "Heesters planten in een ruim gazon, met jonge bomen op stokken" },
+      { src: "/fotos/landschapstuinen/landschapstuinen-02.jpg", alt: "Jonge bomen voor een woning met rode pannen, met open grond en een slootkant" },
     ],
   },
   {
@@ -94,6 +101,8 @@ export const albums: { id: string; title: string; intro: string; photos: Photo[]
       { src: "/fotos/plantencentrum/plantencentrum-pagina-01.jpg", alt: "Vakken met grind en zand op het plantencentrum" },
       { src: "/fotos/plantencentrum/plantencentrum-pagina-05.jpg", alt: "Losse grond in vakken, met een aanhanger op het plantencentrum" },
       { src: "/fotos/headers/werk-in-beeld-header.jpg", alt: "Laanbomen in rechte rijen op de kwekerij" },
+      { src: "/fotos/plantencentrum/plantencentrum-04.jpg", alt: "Bundels haagplanten met labels, klaar op de kwekerij" },
+      { src: "/fotos/plantencentrum/plantencentrum-pagina-04.jpg", alt: "Zakgoed onder de overkapping, met geschoren coniferen ervoor" },
     ],
   },
   {
@@ -103,6 +112,7 @@ export const albums: { id: string; title: string; intro: string; photos: Photo[]
     photos: [
       { src: "/fotos/ontwerp/ontwerp-voorbeeld-01.jpg", alt: "Handgetekende plattegrond met gazon, houten terras, split en borders" },
       { src: "/fotos/ontwerp/ontwerp-voorbeeld-03.jpg", alt: "Handgetekend ontwerp met borders, gazonvakken en een overkapping" },
+      { src: "/fotos/ontwerp/ontwerp-voorbeeld-04.jpg", alt: "Handgetekend ontwerp met terrassen, gazon, split en een vaste-plantenborder" },
     ],
   },
 ];

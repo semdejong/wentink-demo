@@ -37,9 +37,29 @@ export default function AfspraakPage() {
           <p className="mt-3">Maak een moodboard. Verzamel afbeeldingen van de sfeer, materialen en meubels die u mooi vindt, en breng ze bij elkaar. Zo ziet u of alles in dezelfde stijl is. Foto&apos;s sturen we graag mee: doe dat per e-mail.</p>
         </article>
       </section>
-      <section data-section="werkgebied" className="mx-auto max-w-3xl px-5 py-6 sm:px-6">
-        <h2 className="font-serif text-3xl">Werkgebied</h2>
-        <p className="mt-3">Wij komen graag bij u langs in {site.area}.</p>
+      <section data-section="moodboard" className="bg-paper py-12">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 lg:grid-cols-2">
+          <div>
+            <p className="plant-tag">Moodboard</p>
+            <h2 className="mt-4 font-serif text-4xl">Drie stappen voor u begint</h2>
+            <ol className="mt-4 space-y-3">
+              <li><span className="font-bold">1. </span>Bedenk welke sfeer de tuin moet hebben, en of u in de zon wilt zitten of liever in de schaduw leest.</li>
+              <li><span className="font-bold">2. </span>Verzamel beelden van stijl, materialen en meubels, uit een magazine of online.</li>
+              <li><span className="font-bold">3. </span>Leg ze bij elkaar. Zo ziet u of alles bij elkaar past, en voorkomt u dat de tuin een manusje van alles wordt.</li>
+            </ol>
+          </div>
+          <div>
+            <p className="plant-tag">Werkgebied</p>
+            <h2 className="mt-4 font-serif text-4xl">Waar we langskomen</h2>
+            <p className="mt-3">Wij komen graag bij u langs in {site.area}.</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {site.places.map((place) => (
+                <li key={place} className="plant-tag normal-case tracking-normal">{place}</li>
+              ))}
+              <li className="plant-tag normal-case tracking-normal">Omliggende plaatsen</li>
+            </ul>
+          </div>
+        </div>
       </section>
       <section data-section="formulier" className="mx-auto max-w-3xl px-5 py-6 sm:px-6">
         <h2 className="mb-4 font-serif text-3xl">Vraag de afspraak aan</h2>

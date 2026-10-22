@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Lightbox from "@/components/Lightbox";
+import PlotMap from "@/components/PlotMap";
 import { albums, shots } from "@/lib/photos";
 import { routes, site } from "@/lib/site";
 
@@ -43,6 +44,14 @@ export default function PlantencentrumPage() {
         <p className="rounded-2xl bg-paper p-4 font-bold">
           Onze specialiteit: een zeer uitgebreide collectie, 60 soorten uit voorraad leverbaar. Sier- en laanbomen, fruitbomen, haag- en bosplantsoen.
         </p>
+        <PlotMap />
+      </section>
+      <section data-section="showterrein" className="bg-dennen py-14 text-linen">
+        <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
+          <p className="text-sm font-bold tracking-[0.18em] uppercase text-linen/70">Showterrein</p>
+          <p className="mt-4 font-serif text-4xl italic sm:text-5xl">Van biels tot Bentheimer bak.</p>
+          <p className="mt-4 text-linen/85">De materialen staan op showhekken, en ook verwerkt op de grond in verschillende patronen. Zo ziet u wat u koopt. De zaterdag is onze infodag: kom langs met uw vragen.</p>
+        </div>
       </section>
 
       <section id="materialen" data-section="materialen" className="bg-paper py-12">

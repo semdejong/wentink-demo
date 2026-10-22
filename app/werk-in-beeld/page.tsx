@@ -20,6 +20,15 @@ export default function WerkPage() {
           <p className="plant-tag">Werk in beeld</p>
           <h1 className="mt-4 font-serif text-4xl sm:text-6xl">Werk, gesorteerd op soort</h1>
           <p className="mt-4 max-w-2xl text-aarde">We hebben schitterend werk dat we u graag laten zien. Hieronder staat het per soort: aanleg, onderhoud, renovatie, landschapstuinen, plantencentrum en ontwerp.</p>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {albums.map((album, index) => (
+              <li key={album.id}>
+                <a href={`#${album.id}`} className="plant-tag normal-case tracking-normal">
+                  {String(index + 1).padStart(2, "0")} {album.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       {albums.map((album) => (
