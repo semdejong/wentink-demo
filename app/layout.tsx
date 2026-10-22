@@ -1,48 +1,69 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
-import type { CSSProperties } from "react";
+import { Fraunces, Lato } from "next/font/google";
 import "./globals.css";
-import { content } from "@/content";
+import BottomBar from "@/components/BottomBar";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import SleadsBadge from "@/components/SleadsBadge";
+import { content } from "@/content";
+import { seo, site } from "@/lib/site";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-lato",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
-  description: content.seo.description,
+  title: { default: seo.title, template: "%s | Hoveniersbedrijf Wentink" },
+  description: seo.description,
   robots: {
     index: false,
     follow: false,
     nocache: true,
     googleBot: { index: false, follow: false, noimageindex: true },
   },
-  icons: content.company.logo ? { icon: content.company.logo } : undefined,
 };
 
-export const viewport: Viewport = { themeColor: content.colors.primary };
+export const viewport: Viewport = { themeColor: "#008357" };
 
-// Sleads demo-analytics (cookieloos). Events tellen alleen voor slugs die via POST /api/demos geregistreerd zijn.
 const TRACKER_SRC = "https://sleads-demo-analytics.vercel.app/t.js";
 const TRACKER_ENDPOINT = "https://basic-tiger-117.convex.site/track";
 
-const c = content.colors;
-const themeVars = {
-  "--brand": c.primary,
-  "--brand-fg": c.primaryForeground,
-  "--accent": c.accent,
-  "--background": c.background,
-  "--foreground": c.foreground,
-  "--muted": c.muted,
-} as CSSProperties;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LandscapeService",
+  name: site.name,
+  telephone: "+31547362825",
+  email: site.email,
+  areaServed: ["Markelo", "Diepenheim", "Goor", "Delden", "Hof van Twente"],
+  slogan: site.tagline,
+  foundingDate: "1986",
+};
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html lang="nl" className={`${lato.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}>
       <head>
         <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="min-h-full flex flex-col">
-        {children}
+      <body className="flex min-h-full flex-col pb-36 md:pb-0">
+        <a href="#inhoud" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-3 focus:py-2">
+          Naar de inhoud
+        </a>
+        <Header />
+        <main id="inhoud" className="flex-1">{children}</main>
+        <Footer />
+        <BottomBar />
         <SleadsBadge />
       </body>
     </html>
