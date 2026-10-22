@@ -38,19 +38,22 @@ export default function PlantencentrumPage() {
         </figure>
       </section>
 
-      <section id="bomen" data-section="beplanting" className="mx-auto max-w-3xl space-y-4 px-5 py-8 sm:px-6">
+      <section id="bomen" data-section="beplanting" className="mx-auto max-w-6xl px-5 py-10 sm:px-6">
         <h2 className="font-serif text-4xl">Beplanting</h2>
-        <p>Op het plantencentrum vindt u een keur aan tuinplanten, onder andere vaste planten, een- en tweejarige planten, sierheesters en coniferen voor haag en sier.</p>
-        <p className="rounded-2xl bg-paper p-4 font-bold">
+        <p className="mt-3 max-w-3xl">Op het plantencentrum vindt u een keur aan tuinplanten, onder andere vaste planten, een- en tweejarige planten, sierheesters en coniferen voor haag en sier.</p>
+        <p className="mt-4 max-w-3xl rounded-2xl bg-paper p-4 font-bold">
           Onze specialiteit: een zeer uitgebreide collectie, 60 soorten uit voorraad leverbaar. Sier- en laanbomen, fruitbomen, haag- en bosplantsoen.
         </p>
-        <PlotMap />
+        <div data-section="vakken" className="mt-6">
+          <PlotMap />
+        </div>
       </section>
       <section data-section="showterrein" className="bg-dennen py-14 text-linen">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
           <p className="text-sm font-bold tracking-[0.18em] uppercase text-linen/70">Showterrein</p>
           <p className="mt-4 font-serif text-4xl italic sm:text-5xl">Van biels tot Bentheimer bak.</p>
-          <p className="mt-4 text-linen/85">De materialen staan op showhekken, en ook verwerkt op de grond in verschillende patronen. Zo ziet u wat u koopt. De zaterdag is onze infodag: kom langs met uw vragen.</p>
+          <p className="mt-4 text-linen/85">{site.saturday}</p>
+          <p className="mt-2 text-linen/85">U kunt tijdens de openingstijden vrijblijvend een kijkje nemen.</p>
         </div>
       </section>
 

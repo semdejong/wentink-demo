@@ -79,8 +79,13 @@ h1, h2, h3, .font-serif {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(245, 242, 234, 0.05), rgba(20, 36, 28, 0.14));
+  background: linear-gradient(180deg, rgba(245, 242, 234, 0.04), rgba(20, 36, 28, 0.12));
   box-shadow: inset 0 0 0 1px rgba(20, 36, 28, 0.08);
+}
+
+.photo-frame figcaption {
+  position: relative;
+  z-index: 1;
 }
 
 .strip {
@@ -147,6 +152,11 @@ summary::-webkit-details-marker { display: none; }
   text-transform: uppercase;
   box-shadow: 0 1px 0 rgba(20, 36, 28, 0.06);
   position: relative;
+}
+
+.plant-tag.normal-case {
+  text-transform: none;
+  letter-spacing: 0.01em;
 }
 
 .plant-tag::before {

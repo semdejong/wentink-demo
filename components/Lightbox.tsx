@@ -35,29 +35,27 @@ export default function Lightbox({ photos }: { photos: Photo[] }) {
       </ul>
       {current && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-dennen/88 p-4"
+          className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-dennen/90 p-4"
           role="dialog"
           aria-modal="true"
           aria-label={current.alt}
         >
-          <button type="button" className="absolute left-4 top-4 min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length))}>
-            Vorige
-          </button>
-          <button
-            ref={closeRef}
-            type="button"
-            className="absolute right-4 top-4 min-h-11 rounded-full bg-paper px-4 font-bold"
-            onClick={() => setIndex(null)}
-          >
-            Sluiten
-          </button>
-          <button type="button" className="absolute bottom-4 right-4 min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex((i) => (i === null ? i : (i + 1) % photos.length))}>
-            Volgende
-          </button>
-          <figure className="photo-frame max-h-[82vh] w-full max-w-[900px]">
+          <figure className="w-full max-w-[900px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={current.src} alt={current.alt} className="max-h-[82vh] object-contain" />
+            <img src={current.src} alt={current.alt} className="mx-auto max-h-[72vh] w-auto max-w-full rounded-2xl object-contain" />
+            <figcaption className="mt-3 text-center text-base text-linen">{current.alt}</figcaption>
           </figure>
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <button type="button" className="min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length))}>
+              Vorige
+            </button>
+            <button ref={closeRef} type="button" className="min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex(null)}>
+              Sluiten
+            </button>
+            <button type="button" className="min-h-11 rounded-full bg-paper px-4 font-bold" onClick={() => setIndex((i) => (i === null ? i : (i + 1) % photos.length))}>
+              Volgende
+            </button>
+          </div>
         </div>
       )}
     </>

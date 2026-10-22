@@ -38,7 +38,7 @@ export default function Routes() {
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         {routes.map((route) => (
-          <article key={route.title} className="flex flex-col rounded-[1.6rem] border border-line bg-paper p-6 sm:p-8">
+          <article key={route.title} className="flex h-full flex-col rounded-[1.6rem] border border-line bg-paper p-6 sm:p-8">
             <p className="plant-tag">{route.label}</p>
             <h2 className="mt-4 font-serif text-4xl">{route.title}</h2>
             <p className="mt-3 text-aarde">{route.text}</p>
@@ -51,13 +51,15 @@ export default function Routes() {
                 </li>
               ))}
             </ul>
-            <Link
-              href={route.href}
-              data-cta={route.offerte ? "offerte" : undefined}
-              className="mt-6 inline-flex min-h-11 items-center self-start rounded-full bg-dennen px-5 font-bold text-linen"
-            >
-              {route.cta}
-            </Link>
+            <div className="mt-auto pt-6">
+              <Link
+                href={route.href}
+                data-cta={route.offerte ? "offerte" : undefined}
+                className="inline-flex min-h-11 items-center self-start rounded-full bg-dennen px-5 font-bold text-linen"
+              >
+                {route.cta}
+              </Link>
+            </div>
           </article>
         ))}
       </div>

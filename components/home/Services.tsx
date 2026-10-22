@@ -35,8 +35,8 @@ export default function Services() {
         <p className="plant-tag">Onze diensten</p>
         <h2 className="mt-4 max-w-xl font-serif text-4xl sm:text-5xl">Onderhoud, aanleg, renovatie en ontwerp</h2>
         <div className="mt-10 grid gap-8 md:grid-cols-2">
-          {items.map((item, index) => (
-            <article key={item.href} className={index % 2 ? "md:mt-12" : ""}>
+          {items.map((item) => (
+            <article key={item.href}>
               <Link href={item.href} className="group block">
                 <figure className="photo-frame">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

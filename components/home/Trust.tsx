@@ -14,12 +14,12 @@ export default function Trust() {
           : {site.rating.score} uit {site.rating.count}.
         </p>
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          {testimonials.map((item) => (
-            <figure key={item.name} className="rounded-[1.4rem] border border-line bg-linen p-5">
+          {testimonials.map((item, index) => (
+            <figure key={item.name} className={`flex h-full flex-col rounded-[1.4rem] border border-line bg-linen p-5 ${index === testimonials.length - 1 ? "lg:col-span-2" : ""}`}>
               <blockquote>
                 <p>{item.text}</p>
               </blockquote>
-              <figcaption className="mt-4 text-sm font-bold tracking-wide uppercase">{item.name}</figcaption>
+              <figcaption className="mt-auto pt-4 text-sm font-bold tracking-wide uppercase">{item.name}</figcaption>
             </figure>
           ))}
         </div>

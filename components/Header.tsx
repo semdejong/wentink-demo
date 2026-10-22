@@ -14,8 +14,9 @@ export default function Header() {
           {nav.map((item) =>
             "children" in item ? (
               <details key={item.label} className="relative">
-                <summary className="cursor-pointer list-none text-[0.95rem] font-bold marker:content-none">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center gap-1 text-[0.95rem] font-bold marker:content-none">
                   {item.label}
+                  <span aria-hidden className="text-xs text-aarde">▾</span>
                 </summary>
                 <div className="absolute left-0 top-full z-20 mt-2 min-w-52 rounded-2xl border border-line bg-paper p-2 shadow-lg">
                   {item.children.map((child) => (
@@ -26,7 +27,7 @@ export default function Header() {
                 </div>
               </details>
             ) : (
-              <Link key={item.href} href={item.href} className="text-[0.95rem] font-bold">
+              <Link key={item.href} href={item.href} className="inline-flex min-h-11 items-center text-[0.95rem] font-bold">
                 {item.label}
               </Link>
             ),

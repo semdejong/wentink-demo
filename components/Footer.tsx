@@ -27,10 +27,9 @@ export default function Footer() {
           <p className="plant-tag">Plantencentrum</p>
           <ul className="mt-4 space-y-1.5 text-[1.02rem]">
             {site.hours.map((row) => (
-              <li key={row.label}>
-                <span className="text-linen/70">{row.label}</span>
-                <br />
-                {row.value}
+              <li key={row.label} className="border-b border-white/10 py-1.5">
+                <span className="block text-linen/75">{row.label}</span>
+                <span className="font-bold">{row.value}</span>
               </li>
             ))}
           </ul>
@@ -52,7 +51,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-6xl px-5 py-4 text-sm text-linen/70 sm:px-6">
+        <p className="mx-auto max-w-6xl px-5 pb-16 pt-4 text-sm text-linen/70 sm:px-6">
           © {site.name}. {site.since}.
         </p>
       </div>

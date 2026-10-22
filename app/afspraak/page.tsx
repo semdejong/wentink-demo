@@ -20,7 +20,7 @@ export default function AfspraakPage() {
         <h2 className="font-serif text-3xl">Wat er tijdens het bezoek gebeurt</h2>
         <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((step) => (
-            <li key={step.label} className="rounded-2xl border border-line bg-paper p-4">
+            <li key={step.label} className="flex h-full flex-col rounded-2xl border border-line bg-paper p-4">
               <h3 className="font-serif text-2xl">{step.label}</h3>
               <p className="text-base">{step.text}</p>
             </li>
