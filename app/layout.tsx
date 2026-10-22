@@ -10,7 +10,7 @@ import { seo, site } from "@/lib/site";
 
 const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
   style: ["normal", "italic"],
   variable: "--font-lato",
   display: "swap",

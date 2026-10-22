@@ -58,7 +58,7 @@ export default function Logo({
         x="78"
         y="30"
         fill={ink}
-        fontFamily="var(--font-lato), Lato, sans-serif"
+        style={{ fontFamily: "var(--font-lato), Lato, sans-serif" }}
         fontSize="9.2"
         fontWeight="700"
         letterSpacing="1.55"
@@ -69,8 +69,10 @@ export default function Logo({
         x="76"
         y="54"
         fill={ink}
-        fontFamily="var(--font-lato), Lato, sans-serif"
+        style={{ fontFamily: "var(--font-lato), Lato, sans-serif" }}
         fontSize="26"
+        textLength="154"
+        lengthAdjust="spacingAndGlyphs"
         fontWeight="900"
         letterSpacing="0.4"
       >

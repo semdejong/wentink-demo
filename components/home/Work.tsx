@@ -12,7 +12,7 @@ export default function Work() {
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="plant-tag">Werk in beeld</p>
-            <h2 className="mt-4 font-serif text-4xl">Per soort werk, zonder verzinsels</h2>
+            <h2 className="mt-4 font-serif text-4xl">Ons werk, per soort tuin</h2>
           </div>
           <Link href="/werk-in-beeld" className="inline-flex min-h-11 items-center font-bold underline underline-offset-4">
             Bekijk al ons werk
