@@ -42,10 +42,10 @@ export const processSteps = [
 ] as const;
 
 export const seasons = [
-  { label: "Voorjaar", title: "Voorjaarsbeurt", text: "Snoei, borders en de eerste grote beurt van het jaar." },
+  { label: "Voorjaar", title: "Voorjaarsbeurt", text: "De eerste grote beurt van het jaar: snoeiwerk en kleine aanpassingen, in goed overleg." },
   { label: "Zomer", title: "Wekelijks onderhoud", text: "Van wekelijks tuinonderhoud tot het gras en de borders bijhouden, voor particulier en bedrijf." },
-  { label: "Najaar", title: "Najaarsbeurt", text: "Blad en snoei. De voor- en najaarsbeurt kunnen samen in een jaarcontract." },
-  { label: "Winter", title: "Snoeien", text: "Professioneel snoeiwerk, zodat de tuin elk jaar mooier, voller en strakker wordt." },
+  { label: "Najaar", title: "Najaarsbeurt", text: "De tweede grote beurt. Voor- en najaarsbeurt kunnen samen met wekelijks onderhoud in een jaarcontract." },
+  { label: "Jaarrond", title: "Snoeiwerk", text: "Professioneel snoeiwerk, zodat de tuin elk jaar mooier, voller en strakker wordt." },
 ] as const;
 
 export const faq = [
